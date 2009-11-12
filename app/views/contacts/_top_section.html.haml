@@ -30,5 +30,5 @@
         %td= spacer
         %td{ :valign => :top }
           .label Assigned to:
-          = collection_select :contact, :assigned_to, @users, :id, :full_name, { :include_blank => "Myself" }, { :style => "width:160px" }
+          = collection_select :contact, :assigned_to, @users, :id, :full_name, { :include_myself => @current_user.id }, { :style => "width:160px" }
       = hook(:contact_top_section_bottom, self, :f => f)
